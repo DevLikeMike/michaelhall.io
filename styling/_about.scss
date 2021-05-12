@@ -1,0 +1,72 @@
+.about {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10em;
+  min-height: 50vh;
+  height: auto;
+  padding: $padding;
+  position: relative;
+
+  @include mobile {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1em;
+  }
+
+  .about__background {
+    background-color: #3dabff;
+    clip-path: polygon(0 0, 100% 0, 40% 100%, 0% 100%);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: $secondaryFont;
+
+    @include mobile {
+      clip-path: polygon(100% 0, 100% 60%, 69% 100%, 0 100%, 0 0);
+    }
+  }
+
+  &__introduction {
+    width: 100%;
+    h1 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+    p {
+      line-height: 1.5rem;
+      letter-spacing: 0.03rem;
+      font-size: 1.1em;
+    }
+  }
+
+  .about__skills {
+    margin-top: 20%;
+
+    @include mobile {
+      margin-top: 0;
+      align-items: flex-start;
+    }
+
+    h2 {
+      margin: 1rem 5rem 1rem;
+    }
+
+    &__container {
+      max-width: 20rem;
+      width: auto;
+      flex-wrap: wrap;
+
+      @include mobile {
+        justify-content: flex-start;
+      }
+      span {
+        margin: 0.5rem;
+        background-color: #d5d5d5;
+        padding: 0.25rem 0.5rem;
+        border-radius: $radius;
+      }
+    }
+  }
+}

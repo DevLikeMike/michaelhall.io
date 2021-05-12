@@ -1,0 +1,80 @@
+.projects {
+  padding: $padding;
+  min-height: 30vh;
+  height: auto;
+
+  h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+
+  .projects__card {
+    border: 1px solid rgba(30, 30, 30, 0.2);
+    height: auto;
+    margin-bottom: 2rem;
+    width: 100%;
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    .card__img-container {
+      max-height: 30vh;
+      margin-right: 1rem;
+      overflow: hidden;
+      flex: 1;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .card__info {
+      padding: 2rem $padding;
+      border-left: 1px solid rgba(30, 30, 30, 0.2);
+      flex: 1;
+
+      @include mobile {
+        border: none;
+        border-top: 1px solid rgba(30, 30, 30, 0.2);
+        border-bottom: 1px solid rgba(30, 30, 30, 0.2);
+      }
+
+      h3 {
+        margin-bottom: 0.5em;
+        .gamerfacts {
+          color: rgb(213, 148, 9);
+        }
+        .ahbowtique {
+          color: rgb(209, 90, 90);
+        }
+      }
+
+      .btn-container {
+        margin-top: 1.5em;
+
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-right: 3em;
+
+          i {
+            margin-right: 0.25em;
+          }
+        }
+
+        a:hover > i {
+          color: $primaryColor-dark;
+        }
+      }
+    }
+  }
+
+  .projects__card:nth-last-child(1) {
+    margin-bottom: 0;
+  }
+}
