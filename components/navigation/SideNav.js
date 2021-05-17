@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const SideNav = ({ sideOpen, openHandler }) => {
   const onClick = () => {
@@ -9,16 +10,19 @@ const SideNav = ({ sideOpen, openHandler }) => {
     <div className={sideOpen ? "sideNav open" : "sideNav"}>
       <ul className='sideNav-links'>
         <li className='sideNav-item' onClick={onClick}>
-          <a href='#home'>Home</a>
+          <Link href='/'>Home</Link>
         </li>
         <li className='sideNav-item' onClick={onClick}>
-          <a href='#about'>About</a>
+          <Link href='/#about'>About</Link>
         </li>
         <li className='sideNav-item' onClick={onClick}>
-          <a href='#projects'>Projects</a>
+          <Link href='/blog'>Blog</Link>
         </li>
         <li className='sideNav-item' onClick={onClick}>
-          <a href='#contact'>Contact</a>
+          <Link href='/#projects'>Projects</Link>
+        </li>
+        <li className='sideNav-item' onClick={onClick}>
+          <Link href='/#contact'>Contact</Link>
         </li>
       </ul>
     </div>

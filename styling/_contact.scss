@@ -1,8 +1,10 @@
 .contact {
-  padding: 0 $padding;
+  padding: 1rem $padding 0;
+  border-top: 5px solid $primaryColor-dark;
+  position: relative;
 
   @include mobile {
-    padding: 0 1rem;
+    padding: 1rem 1rem 0;
   }
 
   h1 {
@@ -10,6 +12,7 @@
     text-align: center;
     margin-bottom: 2rem;
     font-size: 2rem;
+    color: #fff;
   }
 
   form {
@@ -26,9 +29,13 @@
       width: 100%;
       margin-bottom: 1em;
       padding: 0.5em;
-      border: rgba(30, 30, 30, 0.2) 1px solid;
+      border: $primaryColor 1px solid;
+      border-radius: 8px;
       outline-color: $primaryColor;
       font-size: 1em;
+      color: #fff;
+      background-color: transparent;
+      font-family: "Roboto";
     }
 
     textarea {
@@ -37,7 +44,7 @@
     }
 
     input[type="submit"] {
-      background-color: $primaryColor;
+      background-color: transparent;
       color: $primaryFont;
       width: auto;
       margin: auto;
@@ -45,9 +52,47 @@
       border-radius: $radius;
       font-size: 1.1rem;
       cursor: pointer;
+      transition: 0.2s;
     }
     input[type="submit"]:hover {
       background-color: $primaryColor-dark;
     }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #fff;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: $primaryColor-dark;
+    }
   }
+}
+
+.contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("https://images.pexels.com/photos/4831/hands-coffee-smartphone-technology.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
+  background-position: top;
+  z-index: -1;
+  background-attachment: fixed;
+}
+
+.contact::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #333;
+  opacity: 0.8;
+  z-index: -1;
 }

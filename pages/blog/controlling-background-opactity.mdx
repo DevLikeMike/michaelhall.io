@@ -1,0 +1,72 @@
+import Post from "@/components/Post";
+import Sub from "@/components/elements/Sub";
+const meta = {
+  date: "May 16, 2021",
+  title: "Controlling Background Opacity",
+  slug: "controlling-background-opactity",
+  author: "Michael Hall",
+  category: "Web Development, CSS",
+};
+
+export default ({ children }) => <Post>{children}</Post>;
+
+# Controlling Background Opacity
+
+<Sub>{meta.date}</Sub>{" "}
+
+You ever been making components, or divs, or kick ass hero sections, and you just want to just tweak that background to get better contrast. I'm not the best at design, but I've found myself in this situation more than once. So what are the solutions? Quickly you find out, that simply changing opacities and z-indexs can get messy. Grab your keyboard, follow along, this one is quick and simple.
+
+## Where to start?
+
+So you got your div/section/main, you have your background image, and you have your ill-ly contrasted content, we will just use text for this example.
+
+```html
+<div class="container">
+  <p class="container__content">This is some text</p>
+</div>
+```
+
+> Note: this is BEM class naming convention.
+
+And let's just start with some basic styles.
+
+```CSS
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("./images/coffee.png");
+}
+```
+
+## Solution?
+
+Quickly you'll notice changing your opacity will affect the text color as well, making everything dim. So what do we do? Well one fast easy solution is to cause a disconnect between the two, and to do this we can move the background image into a pseudo selector `::before`.
+
+```CSS
+.container::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0.5;
+	background: url("./images/coffee");
+}
+```
+
+By putting the image into this `::before` and disconnecting the content from the image and stretching the image across the div, we are able to adjust the opactiy of the image. But wait oh no, the content disappeared. Instead of adjusting the z-index, fighting our way back to what we want, I have a simple solution.
+
+```CSS
+.container__content {
+    position: relative;
+    /* Your content styles */
+}
+```
+
+Boom!!! By setting your position back to relative, it resets the z-index for the content. Elements with no position specified go to the bottom of the z-index.
+
+Thanks for reading, and hopefully this helped you if you needed it, or atleast you learned something new. You can see this code at my [codepen](https://codepen.io/mhall-project/pen/vYxKraN). As always, Happy Coding.

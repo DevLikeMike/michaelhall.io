@@ -80,6 +80,10 @@ main {
   align-items: flex-end;
 }
 
+.m-dh {
+  margin-top: $defaultHeight;
+}
+
 @mixin mobile {
   @media (max-width: $mobile) {
     @content;

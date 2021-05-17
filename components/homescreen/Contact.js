@@ -1,14 +1,20 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { NEXT_URL } from "@/config/index";
 import { useRouter } from "next/router";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
   // Form init for react-hook-form
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
+
+  const [success, setSuccess] = useState(false);
 
   // useRouter
   const router = useRouter();
@@ -33,13 +39,18 @@ const Contact = () => {
     // AWAIT response form backend api/contact route
     const result = await res.json();
     if (res.ok) {
-      router.push("/message");
+      toast.success("Thank you for your message!");
+      reset();
+    } else {
+      console.log("something went wrong!");
+      toast.error("Something went wrong, try again later.");
     }
   };
 
   return (
     <section className='contact flex flex-center col' id='contact'>
-      <h1>Contact</h1>
+      <h1>Contact Me</h1>
+      <ToastContainer />
       <form onSubmit={handleSubmit(onSubmit)} className='contact__form'>
         <input
           type='text'
@@ -67,7 +78,7 @@ const Contact = () => {
         />
         <textarea
           name='message'
-          placeholder='Brief details about your case.'
+          placeholder='Message'
           {...register("message", {
             required: true,
             maxLength: 1000,

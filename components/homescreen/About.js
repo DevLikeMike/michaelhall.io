@@ -16,7 +16,7 @@ const About = () => {
         </p>
       </div>
       <div className='about__skills flex ai-fe jc-fe col'>
-        <h2>Skills</h2>
+        <h2>What Can I Do?</h2>
         <div className='about__skills__container flex jc-fe'>
           <span className='skill'>HTML</span>
           <span className='skill'>CSS</span>

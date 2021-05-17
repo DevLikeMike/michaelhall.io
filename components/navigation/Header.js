@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Link from "next/link";
+import { FaChevronDown } from "react-icons/fa";
 import Hamburger from "./Hamburger";
 import SideNav from "./SideNav";
 
@@ -14,30 +16,37 @@ const Header = () => {
       <nav>
         <ul className='main-navigation'>
           <li className='nav-item flex flex-center'>
-            <a href='#home'>Home</a>
+            <Link href='/#home'>Home</Link>
           </li>
           <li className='nav-item flex flex-center'>
-            About <i className='fas fa-chevron-down'></i>
+            <Link href='/#about'>
+              <a>
+                About <FaChevronDown style={{ marginLeft: "0.5rem" }} />
+              </a>
+            </Link>
             <ul className='drop-down-menu'>
               <li className='drop-item flex flex-center'>
-                <a href='#about'>About Me</a>
+                <Link href='/#about'>About Me</Link>
               </li>
               <li className='drop-item flex flex-center'>
-                <a
+                <Link
                   href='/images/MichaelHall_Resume.pdf'
                   target='_blank'
                   rel='noreferrer'
                 >
                   Resume
-                </a>
+                </Link>
               </li>
             </ul>
           </li>
           <li className='nav-item flex flex-center'>
-            <a href='#projects'>Projects</a>
+            <Link href='/blog'>Blog</Link>
           </li>
           <li className='nav-item flex flex-center'>
-            <a href='#contact'>Contact</a>
+            <Link href='/#projects'>Projects</Link>
+          </li>
+          <li className='nav-item flex flex-center'>
+            <Link href='/#contact'>Contact</Link>
           </li>
           <Hamburger openHandler={openHandler} sideOpen={sideOpen} />
         </ul>

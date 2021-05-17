@@ -1,0 +1,159 @@
+import Post from "@/components/Post";
+import Sub from "@/components/elements/Sub";
+const meta = {
+  date: "May 11, 2021",
+  title: "Making a Nextjs Blog using MDX and Styled Components",
+  slug: "making-a-nextjs-blog",
+  author: "Michael Hall",
+  category: "Web Development, React, Markdown, CSS",
+};
+
+export default ({ children }) => <Post>{children}</Post>;
+
+# Making a Nextjs Blog using MDX and Styled Components
+
+<Sub>{meta.date}</Sub>{" "}
+
+Initially I set out to learn just styled components, but after diving a little deeper
+into what was possible I wanted to use the styled components in a markdown blog.
+Since I primarily work in a React environment MDX was the clear front runner for
+my markdown engine.
+
+## What is MDX and why use it?
+
+MDX is markdown, but with more. It has the ability to process an imported React component directly into your markdown. This can be useful if you take advantage of this. You can import your contact component in your footer, or a sign up component for your blog. Of course, there are endless possibilities with this, for more information, I highly recommend checking the docs [here](https://mdxjs.com/).
+
+Previously I wanted to use markdown for a blog, but it really became a headache trying to incorporate it with my JSX. However, MDX really took care of that, being able to put JSX directly into the markdown file really eliminated any problems I had.
+
+One thing to note when using MDX with Nextjs you will need a next.config.js file in your root to configure some options to handle the MDX. You will also need the right npm packages to get things going. First start with the packages. I won't go into each of them but they are useful in thier own way.
+
+- \- [@mdx-js/loader](https://npmjs.com/package/@mdx-js/loader)
+- \- [@mdx-js/react](https://npmjs.com/package/@mdx-js/react)
+- \- [@next/mdx](https://npmjs.com/package/@next/mdx)
+
+Optionally I used prism for my markdown renderer but you wont need that, you can go with your own.
+
+```
+npm i --save @mdx-js/react @mdx-js/loader @next/mdx
+```
+
+And this next.config.json should get you up and going also.
+
+```
+const withMDX = require("@next/mdx")();
+
+module.exports = withMDX({
+  pageExtensions: ["js", "mdx"],
+});
+```
+
+## Using MDX with your Styled Components
+
+Since we are using markdown for the blog posts, the components will need to be styled. Styled Components seemed to be the obvious choice right? Getting set up is fairly easy using Nextjs, but there are some NextJs + Styled Components only things you have to take care of before you start. Just like with MDX some libraries are needed.
+
+- \- [styled-components](https://npmjs.com/package/stlyed-components)
+- \- [babel-plugin-styled-components](https://npmjs.com/package/babel-plugin-styled-components)
+- \- [prism-react-renderer](https://npmjs.com/package/prism-react-renderer) - NOTE: this is only needed to style the `code` tags in your MDX files.
+
+```
+npm i --save styled-components babel-plugin-styled-components prism-react-renderer
+```
+
+Once these are installed again you will need another config file, this time for babel. Make a .babelrc folder and paste in something like:
+
+```
+{
+  "presets": ["next/babel"],
+  "plugins": [["styled-components", { "ssr": true }]]
+}
+```
+
+That should be all to get going for mdx. Just use the .mdx file extension for your markdown folders.
+
+## Prism-react-renderer
+
+For those wanting to make your own code block sections you'll need to make a custom styled code.js component. You can copy and paste this example from thier docs.
+
+```
+import Highlight, { defaultProps } from "prism-react-renderer";
+
+export default function Code({ children }) {
+  return (
+    <Highlight
+      {...defaultProps}
+      code={children}
+      // Default language of javascript here
+      language='javascript'
+    >
+      {({ className, style, tokens, getLineProps, getTokenProps }) => (
+        <pre
+          className={className}
+          style={{
+            ...style,
+            // Custom styles go here
+          }}
+        >
+          {tokens.map((line, i) => (
+            <div key={i} {...getLineProps({ line, key: i })}>
+              {line.map((token, key) => (
+                <span key={key} {...getTokenProps({ token, key })} />
+              ))}
+            </div>
+          ))}
+        </pre>
+      )}
+    </Highlight>
+  );
+}
+```
+
+Prism-react-renderer actually has some nice default themes, but you can make your own or just use one of thiers. Personally I like the vsDark theme since my editor closely resembles it.
+
+Once you have a code.js file you'll need to pass this to your MDXProvider.
+
+Here is my example, using a few custom components in a _Post file_ I will later put in my MDX files.
+
+```
+import { MDXProvider } from "@mdx-js/react";
+import BlogContainer from "@/components/elements/BlogContainer";
+import Code from "@/components/elements/Code";
+import H1 from "@/components/elements/H1";
+import H2 from "@/components/elements/H2";
+import Ul from "@/components/elements/Ul";
+import A from "@/components/elements/A";
+import Paragraph from "@/components/elements/Paragraph";
+import Layout from "./Layout";
+
+const components = {
+  h1: H1,
+  h2: H2,
+  p: Paragraph,
+  code: Code,
+  a: A,
+  ul: Ul,
+};
+
+export default function Post({ children }) {
+  return (
+    <Layout>
+      <BlogContainer>
+        <MDXProvider components={components}>{children}</MDXProvider>
+      </BlogContainer>
+    </Layout>
+  );
+}
+```
+
+All element components are styled components exported out of thier own files, and the BlogContainer is used for spacing and margin. just make a _components_ object and pass the element you want to change as the key, and the styled component as the value. Finally pass the components as a components prop to your provider.
+
+Now to wrap it all together, add this before your Markdown in your MDX and let the magic happen.
+
+```
+import Post from "@/components/Post";
+
+export default ({ children }) => <Post>{children}</Post>;
+
+# Some Example Markdown title
+```
+
+Sorry for the long code heavy read, but hopefully this will help get your blog up and running. You can see this code at my [github](https://github.com/DevLikeMike) under my portfolio repo. Happy Coding.

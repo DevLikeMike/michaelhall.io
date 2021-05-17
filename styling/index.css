@@ -91,6 +91,10 @@ main {
           align-items: flex-end;
 }
 
+.m-dh {
+  margin-top: 2.6rem;
+}
+
 nav {
   height: 2.6rem;
   width: 100%;
@@ -123,9 +127,8 @@ nav .main-navigation {
 }
 
 nav .nav-item {
-  width: 5rem;
   height: 2.6rem;
-  margin-right: 3rem;
+  margin-right: 2rem;
   position: relative;
   font-size: 1.1rem;
   color: #fff;
@@ -293,9 +296,13 @@ nav .sideNav-item {
   font-size: 1.4rem;
 }
 
+footer {
+  min-height: 10vh;
+}
+
 .landing {
   background-color: #303030;
-  background-image: url("../images/pexels-gdtography-911738.jpg");
+  background-image: url("../public/images/pexels-gdtography-911738.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -599,12 +606,14 @@ nav .sideNav-item {
 }
 
 .contact {
-  padding: 0 3rem;
+  padding: 1rem 3rem 0;
+  border-top: 5px solid #2b8ed0;
+  position: relative;
 }
 
 @media (max-width: 840px) {
   .contact {
-    padding: 0 1rem;
+    padding: 1rem 1rem 0;
   }
 }
 
@@ -613,6 +622,7 @@ nav .sideNav-item {
   text-align: center;
   margin-bottom: 2rem;
   font-size: 2rem;
+  color: #fff;
 }
 
 .contact form {
@@ -632,9 +642,13 @@ nav .sideNav-item {
   width: 100%;
   margin-bottom: 1em;
   padding: 0.5em;
-  border: rgba(30, 30, 30, 0.2) 1px solid;
+  border: #4b9cd3 1px solid;
+  border-radius: 8px;
   outline-color: #4b9cd3;
   font-size: 1em;
+  color: #fff;
+  background-color: transparent;
+  font-family: "Roboto";
 }
 
 .contact form textarea {
@@ -643,13 +657,71 @@ nav .sideNav-item {
 }
 
 .contact form input[type="submit"] {
-  background-color: #4b9cd3;
+  background-color: transparent;
   color: #fff;
   width: auto;
   margin: auto;
-  border: 1px solid rgba(30, 30, 30, 0.7);
-  padding: 0.5em 1em;
+  padding: 0.75em 2em;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.contact form input[type="submit"]:hover {
+  background-color: #2b8ed0;
+}
+
+.contact form input::-webkit-input-placeholder,
+.contact form textarea::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.contact form input:-ms-input-placeholder,
+.contact form textarea:-ms-input-placeholder {
+  color: #fff;
+}
+
+.contact form input::-ms-input-placeholder,
+.contact form textarea::-ms-input-placeholder {
+  color: #fff;
+}
+
+.contact form input::placeholder,
+.contact form textarea::placeholder {
+  color: #fff;
+}
+
+.contact form input:focus,
+.contact form textarea:focus {
+  outline: none;
+  border-color: #2b8ed0;
+}
+
+.contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("https://images.pexels.com/photos/4831/hands-coffee-smartphone-technology.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
+  background-position: top;
+  z-index: -1;
+  background-attachment: fixed;
+}
+
+.contact::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #333;
+  opacity: 0.8;
+  z-index: -1;
 }
 /*# sourceMappingURL=index.css.map */

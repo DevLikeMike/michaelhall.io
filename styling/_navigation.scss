@@ -24,9 +24,8 @@ nav {
   }
 
   .nav-item {
-    width: 5rem;
     height: $defaultHeight;
-    margin-right: 3rem;
+    margin-right: 2rem;
     position: relative;
     font-size: 1.1rem;
     color: $primaryFont;
@@ -172,4 +171,8 @@ nav {
     margin: 1rem 0;
     font-size: 1.4rem;
   }
+}
+
+footer {
+  min-height: 10vh;
 }
