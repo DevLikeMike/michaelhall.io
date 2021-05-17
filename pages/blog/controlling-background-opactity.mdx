@@ -5,10 +5,21 @@ const meta = {
   title: "Controlling Background Opacity",
   slug: "controlling-background-opactity",
   author: "Michael Hall",
-  category: "Web Development, CSS",
+  description:
+    "Easily make the background of your image contrast better with the components on top. Fix the opacity and make better looking layouts while learning CSS-Tricks to make you a better developer",
+  category:
+    "Web Development, CSS, React, Next, HTML, Blog, CSS-Tricks, Background",
 };
 
-export default ({ children }) => <Post>{children}</Post>;
+export default ({ children }) => (
+  <Post
+    title={meta.title}
+    description={meta.description}
+    keywords={meta.category}
+  >
+    {children}
+  </Post>
+);
 
 # Controlling Background Opacity
 

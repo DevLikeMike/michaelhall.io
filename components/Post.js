@@ -19,9 +19,13 @@ const components = {
   blockquote: Blockquote,
 };
 
-export default function Post({ children }) {
+export default function Post({ children, title, keywords, description }) {
   return (
-    <Layout>
+    <Layout
+      title={`Blog | ${title}`}
+      description={description}
+      keywords={keywords}
+    >
       <BlogContainer>
         <MDXProvider components={components}>{children}</MDXProvider>
       </BlogContainer>

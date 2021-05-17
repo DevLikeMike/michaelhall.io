@@ -5,10 +5,20 @@ const meta = {
   title: "Making a Nextjs Blog using MDX and Styled Components",
   slug: "making-a-nextjs-blog",
   author: "Michael Hall",
+  description:
+    "Make a static blog using NextJs, MDX, and Styled Components. Follow along with this tutorial and get a blog up and running in no time. Use styled-components to make markdown look great. MDX makes the HTML even easier.",
   category: "Web Development, React, Markdown, CSS",
 };
 
-export default ({ children }) => <Post>{children}</Post>;
+export default ({ children }) => (
+  <Post
+    title={meta.title}
+    description={meta.description}
+    keywords={meta.category}
+  >
+    {children}
+  </Post>
+);
 
 # Making a Nextjs Blog using MDX and Styled Components
 
