@@ -21,10 +21,12 @@ export default function Code({ children }) {
             backgroundColor: "#1b1b1b",
             fontFamily: "monospace",
             letterSpacing: "0.0125em",
-            margin: "1rem",
-            maxWidth: "80%",
+            margin: "1rem 0",
+            width: "100%",
+            maxWidth: "55rem",
             borderRadius: "10px",
             lineBreak: "auto",
+            overflowX: "scroll",
           }}
         >
           {tokens.map((line, i) => (

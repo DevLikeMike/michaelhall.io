@@ -33,7 +33,7 @@ my markdown engine.
 
 MDX is markdown, but with more. It has the ability to process an imported React component directly into your markdown. This can be useful if you take advantage of this. You can import your contact component in your footer, or a sign up component for your blog. Of course, there are endless possibilities with this, for more information, I highly recommend checking the docs [here](https://mdxjs.com/).
 
-Previously I wanted to use markdown for a blog, but it really became a headache trying to incorporate it with my JSX. However, MDX really took care of that, being able to put JSX directly into the markdown file really eliminated any problems I had.
+Previously I wanted to use markdown for a blog, but it can quickly become a headache trying to incorporate it with my JSX. However, MDX does a great job taking care of that, being able to put JSX directly into the markdown file eliminated any problems I had.
 
 One thing to note when using MDX with Nextjs you will need a next.config.js file in your root to configure some options to handle the MDX. You will also need the right npm packages to get things going. First start with the packages. I won't go into each of them but they are useful in thier own way.
 
@@ -59,17 +59,17 @@ module.exports = withMDX({
 
 ## Using MDX with your Styled Components
 
-Since we are using markdown for the blog posts, the components will need to be styled. Styled Components seemed to be the obvious choice right? Getting set up is fairly easy using Nextjs, but there are some NextJs + Styled Components only things you have to take care of before you start. Just like with MDX some libraries are needed.
+Since we are using markdown for the blog posts, the components will need to be styled. Styled Components seemed to be the obvious choice right? Getting set up is fairly easy using Nextjs, but there are some NextJs + Styled Components only things you have to take care of before you start. Just like with MDX some packages are needed.
 
 - \- [styled-components](https://npmjs.com/package/stlyed-components)
 - \- [babel-plugin-styled-components](https://npmjs.com/package/babel-plugin-styled-components)
-- \- [prism-react-renderer](https://npmjs.com/package/prism-react-renderer) - NOTE: this is only needed to style the `code` tags in your MDX files.
+- \- [prism-react-renderer](https://npmjs.com/package/prism-react-renderer) - NOTE: this is what i used for syntax highlighting in my `code` and `pre` elements coming from my MDX files.
 
 ```
 npm i --save styled-components babel-plugin-styled-components prism-react-renderer
 ```
 
-Once these are installed again you will need another config file, this time for babel. Make a .babelrc folder and paste in something like:
+Once these are installed, you will need another config file, this time for babel. Make a .babelrc file and paste in this. It tells babel what files to look for.
 
 ```
 {
@@ -78,11 +78,11 @@ Once these are installed again you will need another config file, this time for 
 }
 ```
 
-That should be all to get going for mdx. Just use the .mdx file extension for your markdown folders.
+That should be all to get going for mdx. Just use the .mdx file extension for your markdown files. Next we will go over styling your mdx files.
 
 ## Prism-react-renderer
 
-For those wanting to make your own code block sections you'll need to make a custom styled code.js component. You can copy and paste this example from thier docs.
+For those wanting to make your own code block sections you'll need to make a custom styled Code.js component. You can copy and paste this example from their docs. We will later use this file in a Post.js component to configure our styled-components with MDX. Sounds a little complicated but it will make sense in the end.
 
 ```
 import Highlight, { defaultProps } from "prism-react-renderer";
@@ -119,7 +119,7 @@ export default function Code({ children }) {
 
 Prism-react-renderer actually has some nice default themes, but you can make your own or just use one of thiers. Personally I like the vsDark theme since my editor closely resembles it.
 
-Once you have a code.js file you'll need to pass this to your MDXProvider.
+Once you have a Code.js file you'll need to pass this to your MDXProvider.
 
 Here is my example, using a few custom components in a _Post file_ I will later put in my MDX files.
 

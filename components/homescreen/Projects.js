@@ -9,7 +9,7 @@ const Projects = () => {
 
   return (
     <section className='projects' id='projects'>
-      <h1>Projects</h1>
+      <h1>Portfolio</h1>
       <div
         className='projects__card flex'
         data-aos='fade-left'
@@ -74,8 +74,7 @@ const Projects = () => {
             This ecommerce site is custom built using React and Redux. Styling
             features bootstrap and bootswatch for a quick base stying. The site
             is functional with paypal sandbox for testing so feel free to try
-            out the cart, and look at the products. And if you find something
-            you like, message me for the existing etsy shop.
+            out the cart, and look at the products.
           </p>
           <div className='btn-container flex jc-fs'>
             <a
