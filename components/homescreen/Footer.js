@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className='flex flex-center'>
       <div>
-        <h3>Copyright &copy; Michael Hall 2021</h3>
+        <h2>Copyright &copy; Michael Hall 2021</h2>
       </div>
     </footer>
   );

@@ -9,7 +9,7 @@ const Projects = () => {
 
   return (
     <section className='projects' id='projects'>
-      <h1>Portfolio</h1>
+      <h2>Portfolio</h2>
       <div
         className='projects__card flex'
         data-aos='fade-left'
@@ -152,7 +152,7 @@ const Projects = () => {
             target='_blank'
             rel='noreferrer'
           >
-            <img src='/images/QuizUP_SS.png' alt='QuizUp_SS' />
+            <img src='/images/QuizUp_SS.png' alt='QuizUp_SS' />
           </a>
         </div>
         <div className='card__info flex col'>
