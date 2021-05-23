@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
+import Image from "next/image";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const Projects = () => {
   useEffect(() => {
@@ -22,7 +24,12 @@ const Projects = () => {
             target='_blank'
             rel='noreferrer'
           >
-            <img src='/images/CHLaw_SS.png' alt='AHBowtique' />
+            <Image
+              src='/images/CHLaw_SS.png'
+              alt='AHBowtique'
+              width={855}
+              height={466}
+            />
           </a>
         </div>
         <div className='card__info flex col'>
@@ -39,14 +46,16 @@ const Projects = () => {
               rel='noreferrer'
               className='iconButton'
             >
-              <i className='fab fa-github fa-2x'></i>Github
+              <FaGithub style={{ marginRight: "0.5em" }} />
+              Github
             </a>
             <a
               href='https://chlaw-gqegsw4xi-devlikemike.vercel.app/'
               target='_blank'
               rel='noreferrer'
             >
-              <i className='fas fa-external-link-alt fa-2x'></i>Try it!
+              <FaExternalLinkAlt style={{ marginRight: "0.5em" }} />
+              Try it!
             </a>
           </div>
         </div>
@@ -63,7 +72,12 @@ const Projects = () => {
             target='_blank'
             rel='noreferrer'
           >
-            <img src='/images/AHBowtique_SS.png' alt='AHBowtique' />
+            <Image
+              src='/images/AHBowtique_SS.png'
+              alt='AHBowtique'
+              width={855}
+              height={466}
+            />
           </a>
         </div>
         <div className='card__info flex col'>
@@ -83,14 +97,16 @@ const Projects = () => {
               rel='noreferrer'
               className='iconButton'
             >
-              <i className='fab fa-github fa-2x'></i>Github
+              <FaGithub style={{ marginRight: "0.5em" }} />
+              Github
             </a>
             <a
               href='https://ahbowtique-ecom.herokuapp.com/'
               target='_blank'
               rel='noreferrer'
             >
-              <i className='fas fa-external-link-alt fa-2x'></i>Try it!
+              <FaExternalLinkAlt style={{ marginRight: "0.5em" }} />
+              Try it!
             </a>
           </div>
         </div>
@@ -107,7 +123,12 @@ const Projects = () => {
             target='_blank'
             rel='noreferrer'
           >
-            <img src='/images/GamerFacts_SS.png' alt='GamerFacts_SS' />
+            <Image
+              src='/images/GamerFacts_SS.png'
+              alt='GamerFacts_SS'
+              width={855}
+              height={466}
+            />
           </a>
         </div>
         <div className='card__info flex col'>
@@ -128,14 +149,16 @@ const Projects = () => {
               rel='noreferrer'
               className='iconButton'
             >
-              <i className='fab fa-github fa-2x'></i>Github
+              <FaGithub style={{ marginRight: "0.5em" }} />
+              Github
             </a>
             <a
               href='https://gamerfacts-app.herokuapp.com/'
               target='_blank'
               rel='noreferrer'
             >
-              <i className='fas fa-external-link-alt fa-2x'></i>Try it!
+              <FaExternalLinkAlt style={{ marginRight: "0.5em" }} />
+              Try it!
             </a>
           </div>
         </div>
@@ -152,7 +175,12 @@ const Projects = () => {
             target='_blank'
             rel='noreferrer'
           >
-            <img src='/images/QuizUp_SS.png' alt='QuizUp_SS' />
+            <Image
+              src='/images/QuizUp_SS.png'
+              alt='QuizUp_SS'
+              width={855}
+              height={466}
+            />
           </a>
         </div>
         <div className='card__info flex col'>
@@ -160,7 +188,7 @@ const Projects = () => {
           <p>
             An online quiz application made for daily multiple choice quiz to
             give to multiple students at a time. In high-school, an application
-            like this have helped many of my teacher give quizes, and quickly
+            like this have helped many of my teacher give quizzes, and quickly
             grade them. This C-R-A features skeleton CSS and is deployed on
             github pages.
           </p>
@@ -171,14 +199,16 @@ const Projects = () => {
               rel='noreferrer'
               className='iconButton'
             >
-              <i className='fab fa-github fa-2x'></i>Github
+              <FaGithub style={{ marginRight: "0.5em" }} />
+              Github
             </a>
             <a
               href='https://devlikemike.github.io/quizup/'
               target='_blank'
               rel='noreferrer'
             >
-              <i className='fas fa-external-link-alt fa-2x'></i>Try it!
+              <FaExternalLinkAlt style={{ marginRight: "0.5em" }} />
+              Try it!
             </a>
           </div>
         </div>

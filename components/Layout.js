@@ -24,7 +24,7 @@ export default function Layout({ title, keywords, description, children }) {
 Layout.defaultProps = {
   title: "Michael Hall | Web Developer",
   description:
-    "Web developer, freelance web developer, located currently in the Columbus, Ohio area. Primariliy working with Reactjs/NextJs to find web solutions for small businesses.",
+    "Web Developer located in the Columbus, Ohio area. Primariliy working with Reactjs/NextJs to find web solutions for small businesses.",
   keywords:
-    "React, Redux, Nextjs, SEO, Web Developer, Portfolio, Blog, Styled components",
+    "React, Redux, Nextjs, SEO, Web Developer, Portfolio, Blog, Styled-Components",
 };

@@ -8,11 +8,13 @@ import Layout from "@/components/Layout";
 export default function Home() {
   return (
     <Layout>
-      <Landing />
-      <About />
-      <Projects />
-      <Contact />
-      <Footer />
+      <main>
+        <Landing />
+        <About />
+        <Projects />
+        <Contact />
+        <Footer />
+      </main>
     </Layout>
   );
 }
