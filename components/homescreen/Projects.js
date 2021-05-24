@@ -19,11 +19,7 @@ const Projects = () => {
         data-aos-duration='700'
       >
         <div className='card__img-container'>
-          <a
-            href='https://chlaw-gqegsw4xi-devlikemike.vercel.app/'
-            target='_blank'
-            rel='noreferrer'
-          >
+          <a href='https://caseyhalllaw.com/' target='_blank' rel='noreferrer'>
             <Image
               src='/images/CHLaw_SS.png'
               alt='AHBowtique'
@@ -51,7 +47,7 @@ const Projects = () => {
               Github
             </a>
             <a
-              href='https://chlaw-gqegsw4xi-devlikemike.vercel.app/'
+              href='https://caseyhalllaw.com/'
               target='_blank'
               rel='noreferrer'
             >
