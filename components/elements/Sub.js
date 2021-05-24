@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
 const Sub = styled.sub`
-  background: #ededed;
+  background: #f5f5f5;
   color: blue;
-  padding: 0.2em 2em;
+  padding: 0.2em 0;
   margin: 0 0 1rem 0;
   display: inline-block;
-  border-radius: 8px;
   width: auto;
   font-style: italic;
 `;

@@ -29,7 +29,7 @@ const Projects = () => {
               alt='AHBowtique'
               width={855}
               height={466}
-              alt='CaseyHallLaw.png'
+              alt='Landing Page Screen Shot'
             />
           </a>
         </div>
@@ -78,7 +78,7 @@ const Projects = () => {
               alt='AHBowtique'
               width={855}
               height={466}
-              alt='AHBowtique.png'
+              alt='Landing Page Screen Shot'
             />
           </a>
         </div>
@@ -130,7 +130,7 @@ const Projects = () => {
               alt='GamerFacts_SS'
               width={855}
               height={466}
-              alt='GamerFacts.png'
+              alt='Landing Page Screen Shot'
             />
           </a>
         </div>
@@ -180,7 +180,7 @@ const Projects = () => {
           >
             <Image
               src='/images/QuizUp_SS.png'
-              alt='QuizUp_SS'
+              alt='Landing Page Screen Shot'
               width={855}
               height={466}
               alt='QuizUp.png'
