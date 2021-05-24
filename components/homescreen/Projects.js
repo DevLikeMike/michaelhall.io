@@ -29,6 +29,7 @@ const Projects = () => {
               alt='AHBowtique'
               width={855}
               height={466}
+              alt='CaseyHallLaw.png'
             />
           </a>
         </div>
@@ -77,6 +78,7 @@ const Projects = () => {
               alt='AHBowtique'
               width={855}
               height={466}
+              alt='AHBowtique.png'
             />
           </a>
         </div>
@@ -128,6 +130,7 @@ const Projects = () => {
               alt='GamerFacts_SS'
               width={855}
               height={466}
+              alt='GamerFacts.png'
             />
           </a>
         </div>
@@ -180,6 +183,7 @@ const Projects = () => {
               alt='QuizUp_SS'
               width={855}
               height={466}
+              alt='QuizUp.png'
             />
           </a>
         </div>
