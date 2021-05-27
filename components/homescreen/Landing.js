@@ -4,7 +4,7 @@ const Landing = () => {
   return (
     <div className='landing flex flex-center' id='home'>
       <div className='landing__card flex jc-c ai-c col'>
-        <h1 className='name'>Michael Hall | Web Developer</h1>
+        <h1 className='name text-center'>Michael Hall | Web Developer</h1>
         <ul className='socials flex ai-c jc-c row'>
           <li>
             <a

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { NEXT_URL } from "@/config/index";
 import { useRouter } from "next/router";
@@ -13,8 +13,6 @@ const Contact = () => {
     reset,
     formState: { errors },
   } = useForm();
-
-  const [success, setSuccess] = useState(false);
 
   // useRouter
   const router = useRouter();
@@ -42,8 +40,8 @@ const Contact = () => {
       toast.success("Thank you for your message!");
       reset();
     } else {
-      console.log("something went wrong!");
-      toast.error("Something went wrong, try again later.");
+      toast.error("Something went wrong. Try Again later");
+      console.log("Something wrong");
     }
   };
 
@@ -56,35 +54,71 @@ const Contact = () => {
           type='text'
           name='name'
           placeholder='Name'
-          required
           // Register is from react-hook-form, first param is name field, second options
-          {...register("name", { required: true, maxLength: 20 })}
+          {...register("name", {
+            required: {
+              value: true,
+              message: "You must enter a first name.",
+            },
+            maxLength: {
+              value: 20,
+              message: "First name cannot be longer than 20 characters.",
+            },
+          })}
         />
+        <span>{errors?.name?.message}</span>
         <input
           type='email'
           name='email'
           placeholder='Email'
-          required
           // Register is from react-hook-form, first param is name field, second options
-          {...register("email", { required: true, maxLength: 40 })}
+          {...register("email", {
+            required: {
+              value: true,
+              message: "You must enter a email.",
+            },
+            maxLength: {
+              value: 40,
+              message: "Your email cannot be longer than 40 characters.",
+            },
+          })}
         />
+        <span>{errors?.email?.message}</span>
         <input
           type='text'
           name='subject'
           placeholder='Subject'
-          required
-          // Register is from react-hook-form, first param is name field, second options
-          {...register("subject", { required: true, maxLength: 30 })}
+          {...register("subject", {
+            required: {
+              value: true,
+              message: "You must enter a Subject for your message.",
+            },
+            maxLength: {
+              value: 30,
+              message: "Subject cannot be longer than 30 characters.",
+            },
+          })}
         />
+        <span>{errors?.subject?.message}</span>
         <textarea
           name='message'
           placeholder='Message'
           {...register("message", {
-            required: true,
-            maxLength: 1000,
-            minLength: 25,
+            required: {
+              value: true,
+              message: "You must enter a message.",
+            },
+            minLength: {
+              value: 25,
+              message: "Your message must be at least 25 characters long.",
+            },
+            maxLength: {
+              value: 1000,
+              message: "Your message cannot be longer than 1000 characters.",
+            },
           })}
         ></textarea>
+        <span>{errors?.message?.message}</span>
         <input type='submit' value='Submit Message' />
       </form>
     </section>

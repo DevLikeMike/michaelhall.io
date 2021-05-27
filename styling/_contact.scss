@@ -69,6 +69,14 @@
       border-color: $primaryColor-dark;
     }
   }
+
+  span {
+    font-size: 0.8em;
+    padding: 0.2rem;
+    color: red;
+    display: inline-block;
+    transform: translateY(-10px);
+  }
 }
 
 .contact::before {
