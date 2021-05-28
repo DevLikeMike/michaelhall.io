@@ -7,12 +7,12 @@ const About = () => {
       <div className='about__introduction'>
         <h2>Hi, I'm Michael!</h2>
         <p>
-          Hello, I am Michael. A self taught developer from Eastern Tennessee
-          currently living in Columbus, Ohio. My primary focus is on front-end
-          development working with the MERN stack + Redux. I have spent the past
-          year dedicating my free time to coding in effort to change careers
-          from the plumbing industry into web development. For fun I enjoy going
-          to museums, tampering with hardware, and all things sports!
+          Hello, I am Michael, A freelance web developer from Eastern Tennessee
+          currently living in Columbus, Ohio. I first started coding in college
+          learning C++, but later found that I preferred to add to the web. I
+          like to focus on Nextjs and have a lot of fun building websites. I'm
+          self taught and very passionate. If I'm not coding, I'm likely at a
+          museum, watching sports, or chasing my dog.
         </p>
       </div>
       <div className='about__skills flex ai-fe jc-fe col'>
