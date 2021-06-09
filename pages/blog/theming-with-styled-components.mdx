@@ -1,0 +1,193 @@
+import Post from "@/components/Post";
+import Sub from "@/components/elements/Sub";
+const meta = {
+  date: "June, 9, 2021",
+  title: "Theming With Styled Components",
+  slug: "theming-with-styled-components",
+  author: "Michael Hall",
+  description:
+    "How to make a custom theme with styled components in NextJs, and use custom variables with your styled components",
+  category: "CSS, Nextjs, Styled-Components, React, Javascript",
+};
+
+export default ({ children }) => (
+  <Post
+    title={meta.title}
+    description={meta.description}
+    keywords={meta.category}
+  >
+    {children}
+  </Post>
+);
+
+# Theming In Nextjs Using Styled Components
+
+<Sub>{meta.date}</Sub>{" "}
+
+Using styled-components and is becoming more and more popular. Creating a theme for your website/web-app can be very important when it comes to styling your site. Instead of copying and pasting that same HSL value to every component, you can instead just grab that color from your theme. After you get set up, you can go right back to using styled-components like you were before, minus the `command+c` and `command+v`.
+
+## STYLED COMPONENTS
+
+Getting started with styled-components in Nextjs is very simple, but can be frustrating if you just glanced through the documentation like I did. Not to worry, I've got you covered. To start, use your terminal of choicce and cd into your next app. Once inside the root, install styled-components using your preffered package manager, for this example we will be using NPM.
+
+```
+npm install styled-components
+```
+
+Before trying to make a new component we must first configure babel and our `_document.js` to handle styled-components. First lets tackle the babel configure. While still in your root directory, create a file named `.babelrc`, and it should look like this:
+
+```
+{
+  "presets": ["next/babel"],
+  "plugins": [["styled-components", { "ssr": true }]]
+}
+```
+
+Next you will need to override the default `<Document />` by changing your `_document.js` file. If you don't have one or have never done this before, it's quite simple. Inside your **pages** directory create a file named `_document.js`. This file will allow you to adjust anything your would like on your HTML file before build time. Like adding `lang` to your HTML tag. You can copy and paste the following to get started with Styled Components.
+
+```
+import Document, { Html, Head, Main, NextScript } from "next/document";
+import { ServerStyleSheet } from "styled-components";
+
+export default class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const sheet = new ServerStyleSheet();
+    const originalRenderPage = ctx.renderPage;
+
+    try {
+      ctx.renderPage = () =>
+        originalRenderPage({
+          enhanceApp: (App) => (props) =>
+            sheet.collectStyles(<App {...props} />),
+        });
+
+      const initialProps = await Document.getInitialProps(ctx);
+      return {
+        ...initialProps,
+        styles: (
+          <>
+            {initialProps.styles}
+            {sheet.getStyleElement()}
+          </>
+        ),
+      };
+    } finally {
+      sheet.seal();
+    }
+  }
+
+  render() {
+    return (
+      <Html lang='en'>
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
+}
+```
+
+## MAKING THE THEME
+
+Now we are ready to make the theme of our Website. We do this by first creating a **Config** directory in our root, and inside creating a file named `ThemeConfig.js`. Inside this file we will establish our variables in an object named theme. Then, using `createGlobalStyle` from styled-components we can establish any CSS resets and default global styles we would like for our website. For example:
+
+```
+import { createGlobalStyle } from "styled-components";
+
+export const theme = {
+  body: "hsl(360, 0%, 0%)",
+  text: "hsl(360, 88%, 51%)",
+};
+
+export const GlobalStyles = createGlobalStyle`
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background: ${({ theme }) => theme.body};
+    color: ${({ theme }) => theme.text};
+    font-family: Roboto, sans-serif;
+  }
+`;
+```
+
+Here we have some custom variables like **body** and **text** in our theme object. Then we are using the variables in our GlobalStyles.
+
+To use these styles we must bring them into the `_app.js` and wrap our app in a ThemeProvider.
+
+## USING THE THEME
+
+Make your way to your `_app.js` file in your pages folder. Inside here we are going to bring in ThemeProvider from styled-components, and wrap our app with it like so:
+
+```
+import { ThemeProvider } from "styled-components";
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <ThemeProvider>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
+}
+
+export default MyApp;
+```
+
+This alone will not use the theme we must pass a prop to the provider named `theme` and we can also use our global styles here as well. After doing this, your `_app.js` file should look like this:
+
+```
+import { ThemeProvider } from "styled-components";
+import { GlobalStyles, theme } from "../config/ThemeConfig";
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
+}
+
+export default MyApp;
+```
+
+> Notice that the GlobalStyles is inside the ThemeProvider.
+
+## USING CUSTOM VARIABLES WITH YOUR STYLED COMPONENTS
+
+If you want to add a custom variable to your styled-component you may simply just add it to `theme` object in your `ThemeConfig.js` file. Then it will be avalible for use in your styled-components to come.
+
+```
+export const theme = {
+  body: "hsl(360, 0%, 0%)",
+  text: "hsl(360, 88%, 51%)",
+  defaultLineHeight: "1.4";
+};
+```
+
+Save and go to your component where ever it is. Here we made a variable named `defaultLineHeight` and set it to 1.5. So if you were to make a custom component using a styled p tag you can easily add the same line height without having to reference back. This is an easy was to make things consistent and smooth. An example of a styled p tag is:
+
+```
+import styled from "styled-components";
+
+const Paragraph = styled.p`
+    color: #ffffff;
+    line-height: ${({ theme }) => theme.defaultLineHeight};
+    font-size: 1rem;
+`;
+
+export default StyledParagraph = ({children}) => {
+    return (
+        <Paragraph>
+         {children}
+        </Paragraph>
+    );
+}
+```
+
+Thanks for reading, more tutorials are soon to come. You can find and example of this in use at this [github repo](https://github.com/DevLikeMike/gent-temp-layout). Just clone and install. Code On Good People.

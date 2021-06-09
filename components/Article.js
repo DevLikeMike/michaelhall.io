@@ -3,11 +3,13 @@ import Link from "next/link";
 import Sub from "./elements/Sub";
 
 const ArticleContainer = styled.div`
-  height: 28rem;
+  min-height: 28rem;
+  height: auto;
   background-color: #fff;
   max-width: 25rem;
   position: relative;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+  flex-grow: 1;
 `;
 
 const ThumbContainer = styled.div`
@@ -73,6 +75,10 @@ const ReadMore = styled.a`
   }
 `;
 
+const Date = styled.p`
+  font-size: 0.85rem;
+`;
+
 const Article = ({
   children,
   slug,
@@ -80,6 +86,7 @@ const Article = ({
   thumbnail,
   category,
   description,
+  date,
 }) => {
   return (
     <ArticleContainer className='flex col'>
@@ -94,6 +101,9 @@ const Article = ({
         <Link href={`/blog/${slug}`}>
           <StyledLink>{children}</StyledLink>
         </Link>
+        <Date>
+          <em>{date}</em>
+        </Date>
         <ContentPara>{description}</ContentPara>
         <Sub>{author}</Sub>
         <Link href={`/blog/${slug}`}>

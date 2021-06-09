@@ -3,8 +3,10 @@ import articles from "../Data/articles";
 import styled from "styled-components";
 
 const ArticleList = styled.ul`
-  margin: 0.5rem 0;
+  margin: 0.5rem auto;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
 
   @media (max-width: 560px) {
@@ -27,6 +29,7 @@ export default function Articles() {
             category={article.category}
             author={article.author}
             description={article.description}
+            date={article.date}
           >
             {article.title}
           </Article>
