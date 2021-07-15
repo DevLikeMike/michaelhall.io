@@ -14,6 +14,55 @@ const Projects = () => {
       <h2>Portfolio</h2>
       <div
         className='projects__card flex'
+        data-aos='fade-right'
+        data-aos-once='true'
+        data-aos-duration='700'
+      >
+        <div className='card__img-container'>
+          <a
+            href='https://lending-hand-cleaners.vercel.app/'
+            target='_blank'
+            rel='noreferrer'
+          >
+            <Image
+              src='/images/lhc_SS.png'
+              alt='LHC ScreenShot'
+              width={855}
+              height={466}
+            />
+          </a>
+        </div>
+        <div className='card__info flex col'>
+          <h3>Lending Hand Cleaners</h3>
+          <p>
+            This site is a work in progress(as of July 14, 2021). This site is a
+            static site built using NextJs, ReactJs, SCSS, Styled-Components,
+            and is hosted using Vercel.
+          </p>
+          <div className='btn-container flex jc-fs'>
+            <a
+              href='https://github.com/DevLikeMike/lending-hand-cleaners'
+              target='_blank'
+              rel='noreferrer'
+              className='iconButton'
+            >
+              <FaGithub style={{ marginRight: "0.5em" }} />
+              Github
+            </a>
+            <a
+              href='https://lending-hand-cleaners.vercel.app/'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <FaExternalLinkAlt style={{ marginRight: "0.5em" }} />
+              Try it!
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className='projects__card flex'
         data-aos='fade-left'
         data-aos-once='true'
         data-aos-duration='700'
@@ -22,7 +71,6 @@ const Projects = () => {
           <a href='https://caseyhalllaw.com/' target='_blank' rel='noreferrer'>
             <Image
               src='/images/CHLaw_SS.png'
-              alt='AHBowtique'
               width={855}
               height={466}
               alt='Landing Page Screen Shot'
