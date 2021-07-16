@@ -36,8 +36,8 @@ const Projects = () => {
           <h3>Lending Hand Cleaners</h3>
           <p>
             This site is a work in progress(as of July 14, 2021). This site is a
-            static site built using NextJs, ReactJs, SCSS, Styled-Components,
-            and is hosted using Vercel.
+            static site built using NextJs, SCSS, Styled-Components, and is
+            hosted using Vercel.
           </p>
           <div className='btn-container flex jc-fs'>
             <a
@@ -80,9 +80,9 @@ const Projects = () => {
         <div className='card__info flex col'>
           <h3>Casey Hall Law</h3>
           <p>
-            This site is a work in progress(as of May 4, 2021). This site is a
-            static site built using NextJs, ReactJs, SCSS, and is hosted using
-            Vercel.
+            A personal injury lawyer website. I was responsible for copywrite,
+            SEO, design, and development. This site is a static site built using
+            NextJs, ReactJs, SCSS, and is hosted using Vercel.
           </p>
           <div className='btn-container flex jc-fs'>
             <a
