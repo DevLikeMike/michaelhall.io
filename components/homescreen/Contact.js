@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { NEXT_URL } from "@/config/index";
 import { useRouter } from "next/router";

@@ -53,6 +53,7 @@ const Projects = () => {
               href='https://lending-hand-cleaners.vercel.app/'
               target='_blank'
               rel='noreferrer'
+              className='iconButton'
             >
               <FaExternalLinkAlt style={{ marginRight: "0.5em" }} />
               Try it!
@@ -98,6 +99,7 @@ const Projects = () => {
               href='https://caseyhalllaw.com/'
               target='_blank'
               rel='noreferrer'
+              className='iconButton'
             >
               <FaExternalLinkAlt style={{ marginRight: "0.5em" }} />
               Try it!
@@ -150,6 +152,7 @@ const Projects = () => {
               href='https://ahbowtique-ecom.herokuapp.com/'
               target='_blank'
               rel='noreferrer'
+              className='iconButton'
             >
               <FaExternalLinkAlt style={{ marginRight: "0.5em" }} />
               Try it!
@@ -203,6 +206,7 @@ const Projects = () => {
               href='https://gamerfacts-app.herokuapp.com/'
               target='_blank'
               rel='noreferrer'
+              className='iconButton'
             >
               <FaExternalLinkAlt style={{ marginRight: "0.5em" }} />
               Try it!
@@ -254,6 +258,7 @@ const Projects = () => {
               href='https://devlikemike.github.io/quizup/'
               target='_blank'
               rel='noreferrer'
+              className='iconButton'
             >
               <FaExternalLinkAlt style={{ marginRight: "0.5em" }} />
               Try it!

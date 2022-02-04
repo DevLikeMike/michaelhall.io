@@ -57,6 +57,16 @@
       .btn-container {
         margin-top: 1.5em;
 
+        .iconButton {
+          transition: 0.3s ease-out;
+        }
+
+        .iconButton:hover {
+          text-decoration: underline;
+          color: $primaryColor-dark;
+          cursor: pointer;
+        }
+
         a {
           display: flex;
           align-items: center;

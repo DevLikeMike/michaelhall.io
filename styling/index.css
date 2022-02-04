@@ -455,7 +455,7 @@ footer {
   width: 100%;
 }
 
-.about__introduction h1 {
+.about__introduction h2 {
   margin-bottom: 1rem;
   font-size: 1.8rem;
 }
@@ -509,9 +509,10 @@ footer {
   padding: 3rem;
   min-height: 30vh;
   height: auto;
+  overflow-x: hidden;
 }
 
-.projects h1 {
+.projects h2 {
   width: 100%;
   text-align: center;
   margin-bottom: 2rem;
@@ -617,7 +618,7 @@ footer {
   }
 }
 
-.contact h1 {
+.contact h2 {
   width: 100%;
   text-align: center;
   margin-bottom: 2rem;
@@ -697,6 +698,15 @@ footer {
 .contact form textarea:focus {
   outline: none;
   border-color: #2b8ed0;
+}
+
+.contact span {
+  font-size: 0.8em;
+  padding: 0.2rem;
+  color: red;
+  display: inline-block;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
 }
 
 .contact::before {
