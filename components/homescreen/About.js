@@ -5,7 +5,7 @@ const About = () => {
     <section className='about' id='about'>
       <div className='about__background'></div>
       <div className='about__introduction'>
-        <h2>Hi, I'm Michael!</h2>
+        <h2>Hi, I'm Michael.</h2>
         <p>
           Hello, I am Michael, A freelance web developer from Eastern Tennessee
           currently living in Columbus, Ohio. I first started coding in college
