@@ -12,6 +12,7 @@ const Landing = () => {
               target='_blank'
               rel='noreferrer'
               className='flex ai-c jc-c col'
+              title='Github'
             >
               <FaGithub size='2em' />
               <span>Github</span>
@@ -23,6 +24,7 @@ const Landing = () => {
               target='_blank'
               rel='noreferrer'
               className='flex ai-c jc-c col'
+              title='LinkedIn'
             >
               <FaLinkedin size='2em' />
               <span>LinkedIn</span>
@@ -34,13 +36,14 @@ const Landing = () => {
               target='_blank'
               rel='noreferrer'
               className='flex ai-c jc-c col'
+              title='CodePen'
             >
               <FaCodepen size='2em' />
               <span>Codepen</span>
             </a>
           </li>
           <li>
-            <a href='#projects' className='flex ai-c jc-c col'>
+            <a href='#projects' className='flex ai-c jc-c col' title='Projects'>
               <FaList size='2em' />
               <span>Projects</span>
             </a>

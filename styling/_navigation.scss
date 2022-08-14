@@ -174,5 +174,75 @@ nav {
 }
 
 footer {
-  min-height: 10vh;
+  padding: 1rem $padding 0;
+
+  .footer__socials {
+    margin-bottom: 1rem;
+
+    .socials__link {
+      margin: 0 0.5rem;
+    }
+    .round {
+      border: 1px solid #000;
+      border-radius: 50%;
+      padding: 0.33rem;
+    }
+  }
+
+  .footer__news {
+    margin-bottom: 1rem;
+    p,
+    input {
+      margin-right: 1rem;
+    }
+
+    input[type="email"] {
+      width: 33%;
+      padding: 0.5em;
+      border: $primaryColor 1px solid;
+      border-radius: 8px;
+      outline-color: $primaryColor;
+      font-size: 1em;
+      color: #333;
+      background-color: transparent;
+      font-family: "Roboto";
+    }
+
+    button {
+      outline-color: $primaryColor;
+      background-color: transparent;
+      color: $primaryColor;
+      padding: 0.25em 0.75em;
+      border: $primaryColor 1px solid;
+      border-radius: $radius;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $primaryColor;
+        color: #fff;
+      }
+    }
+  }
+
+  .footer__text {
+    margin-bottom: 1rem;
+  }
+
+  .footer__links_container {
+    gap: clamp(2rem, 20rem, 25rem);
+    margin-bottom: 1rem;
+
+    @include mobile {
+      gap: clamp(2rem, 5rem, 10rem);
+    }
+
+    .footer__links {
+      align-items: center;
+
+      .text-center {
+        color: $primaryColor;
+        text-decoration: underline;
+      }
+    }
+  }
 }

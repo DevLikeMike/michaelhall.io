@@ -8,11 +8,11 @@ const About = () => {
         <h2>Hi, I'm Michael.</h2>
         <p>
           Hello, I am Michael, A freelance web developer from Eastern Tennessee
-          currently living in Columbus, Ohio. I first started coding in college
-          learning C++, but later found that I preferred to add to the web. I
-          like to focus on Nextjs and have a lot of fun building websites. I'm
-          self taught and very passionate. If I'm not coding, I'm likely at a
-          museum, watching sports, or chasing my dog.
+          currently living in Jacksonville, Florida. I first started coding in
+          college learning C++, but later found that I preferred to add to the
+          web. I like to focus on React/Nextjs and have a lot of fun building
+          websites. I'm self taught and very passionate. If I'm not coding, I'm
+          likely at a museum, watching sports, or chasing my dog.
         </p>
       </div>
       <div className='about__skills flex ai-fe jc-fe col'>
