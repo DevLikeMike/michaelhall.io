@@ -30,7 +30,7 @@ const Header = () => {
               </li>
               <li className='drop-item flex flex-center'>
                 <Link
-                  href='/images/MichaelHall_Resume.pdf'
+                  href='/images/MichaelHall_CV_2022.pdf'
                   target='_blank'
                   rel='noreferrer'
                 >
