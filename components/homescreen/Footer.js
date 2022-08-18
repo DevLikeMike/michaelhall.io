@@ -77,6 +77,11 @@ const Footer = () => {
         </section>
         <section className='footer__links flex jc-c col'>
           <h3>Recent Sites</h3>
+          <Link href='https://nextjs-ecommerce-frontend-three.vercel.app/'>
+            <a className='text-center' target='_blank' rel='noreferrer'>
+              Tech TeeShirt Company
+            </a>
+          </Link>
           <Link href='https://LendingHandcleaners.com'>
             <a className='text-center' target='_blank' rel='noreferrer'>
               Lending Hand Cleaners

@@ -14,6 +14,74 @@ const Projects = () => {
       <h2>Portfolio</h2>
       <div
         className='projects__card flex'
+        data-aos='fade-left'
+        data-aos-once='true'
+        data-aos-duration='700'
+      >
+        <div className='card__img-container'>
+          <a
+            href='https://devlikemike.github.io/nextjs-ecommerce-frontend/'
+            target='_blank'
+            rel='noreferrer'
+          >
+            <Image
+              src='/images/Tshirt_SS.png'
+              width={855}
+              height={466}
+              alt='Tech TeeShirt Company'
+            />
+          </a>
+        </div>
+        <div className='card__info flex col'>
+          <h3>Tech TeeShirt Company</h3>
+          <p>
+            Tech TeeShirt Company is a mock ecommerce site designed to expand my
+            knowledge of Nextjs and it's uses of server side rendereding and
+            client side rendereding. It was designed in{" "}
+            <span>
+              <a href='figma.com'>Figma</a>
+            </span>{" "}
+            and later built using{" "}
+            <span>
+              <a href='nextjs.org'>Nextjs</a>
+            </span>{" "}
+            for the front-end and{" "}
+            <span>
+              <a href='strapi.io'>Strapi</a>
+            </span>{" "}
+            for the backend. For styling, I used a mixture of{" "}
+            <span>
+              <a href='styled-components.com'>Styled-Components</a>
+            </span>{" "}
+            and SCSS. Using Nextjs ensures I would have a fast site while being
+            able to control the SEO of the site far better than vanilla React.
+            Using Strapi as a CMS makes managing content very easy without
+            sacrificing any speed or quality.
+          </p>
+          <div className='btn-container flex jc-fs'>
+            <a
+              href='https://github.com/DevLikeMike/nextjs-ecommerce-frontend'
+              target='_blank'
+              rel='noreferrer'
+              className='iconButton'
+            >
+              <FaGithub style={{ marginRight: "0.5em" }} />
+              See The Code
+            </a>
+            <a
+              href='https://nextjs-ecommerce-frontend-three.vercel.app/'
+              target='_blank'
+              rel='noreferrer'
+              className='iconButton'
+            >
+              <FaExternalLinkAlt style={{ marginRight: "0.5em" }} />
+              Try it!
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        className='projects__card flex'
         data-aos='fade-right'
         data-aos-once='true'
         data-aos-duration='700'
@@ -47,7 +115,7 @@ const Projects = () => {
               className='iconButton'
             >
               <FaGithub style={{ marginRight: "0.5em" }} />
-              Github
+              See The Code
             </a>
             <a
               href='https://lending-hand-cleaners.vercel.app/'
@@ -93,7 +161,7 @@ const Projects = () => {
               className='iconButton'
             >
               <FaGithub style={{ marginRight: "0.5em" }} />
-              Github
+              See The Code
             </a>
             <a
               href='https://caseyhalllaw.com/'
@@ -124,7 +192,6 @@ const Projects = () => {
               alt='AHBowtique'
               width={855}
               height={466}
-              alt='Landing Page Screen Shot'
             />
           </a>
         </div>
@@ -146,7 +213,7 @@ const Projects = () => {
               className='iconButton'
             >
               <FaGithub style={{ marginRight: "0.5em" }} />
-              Github
+              See The Code
             </a>
             <a
               href='https://ahbowtique-ecom.herokuapp.com/'
@@ -177,7 +244,6 @@ const Projects = () => {
               alt='GamerFacts_SS'
               width={855}
               height={466}
-              alt='Landing Page Screen Shot'
             />
           </a>
         </div>
@@ -200,62 +266,10 @@ const Projects = () => {
               className='iconButton'
             >
               <FaGithub style={{ marginRight: "0.5em" }} />
-              Github
+              See The Code
             </a>
             <a
               href='https://gamerfacts-app.herokuapp.com/'
-              target='_blank'
-              rel='noreferrer'
-              className='iconButton'
-            >
-              <FaExternalLinkAlt style={{ marginRight: "0.5em" }} />
-              Try it!
-            </a>
-          </div>
-        </div>
-      </div>
-      <div
-        className='projects__card flex'
-        data-aos='fade-right'
-        data-aos-once='true'
-        data-aos-duration='700'
-      >
-        <div className='card__img-container'>
-          <a
-            href='https://devlikemike.github.io/quizup/'
-            target='_blank'
-            rel='noreferrer'
-          >
-            <Image
-              src='/images/QuizUp_SS.png'
-              alt='Landing Page Screen Shot'
-              width={855}
-              height={466}
-              alt='QuizUp.png'
-            />
-          </a>
-        </div>
-        <div className='card__info flex col'>
-          <h3>QuizUp</h3>
-          <p>
-            An online quiz application made for daily multiple choice quiz to
-            give to multiple students at a time. In high-school, an application
-            like this have helped many of my teacher give quizzes, and quickly
-            grade them. This C-R-A features skeleton CSS and is deployed on
-            github pages.
-          </p>
-          <div className='btn-container flex jc-fs'>
-            <a
-              href='https://github.com/DevLikeMike/quizup'
-              target='_blank'
-              rel='noreferrer'
-              className='iconButton'
-            >
-              <FaGithub style={{ marginRight: "0.5em" }} />
-              Github
-            </a>
-            <a
-              href='https://devlikemike.github.io/quizup/'
               target='_blank'
               rel='noreferrer'
               className='iconButton'
