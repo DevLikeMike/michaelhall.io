@@ -103,9 +103,17 @@ const Projects = () => {
         <div className='card__info flex col'>
           <h3>Lending Hand Cleaners</h3>
           <p>
-            This site is a work in progress(as of July 14, 2021). This site is a
-            static site built using NextJs, SCSS, Styled-Components, and is
-            hosted using Vercel.
+            This site is my example of a brochure website. Designed using{" "}
+            <span>
+              <a href='figma.com'>Figma</a>
+            </span>
+            , developed using{" "}
+            <span>
+              <a href='nextjs.org'>Nextjs</a>
+            </span>
+            . This site is made to showcase the abilities of the client, how to
+            contact my client, and the services they provide. An ideal site for
+            a small business.
           </p>
           <div className='btn-container flex jc-fs'>
             <a
